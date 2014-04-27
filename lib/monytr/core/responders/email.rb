@@ -10,6 +10,10 @@ module Monytr
           Mail.defaults do
             delivery_method LetterOpener::DeliveryMethod, :location => File.expand_path('../tmp/letter_opener', __FILE__)
           end
+        else
+          Mail.defaults do
+            delivery_method :sendmail
+          end
         end
 
         def initialize(type, details, state_change)
