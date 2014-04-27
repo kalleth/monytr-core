@@ -20,7 +20,7 @@ module Monytr
           end
 
           def checks_path
-            Monytr::Core.config.checks_store
+            Monytr::Core.config.data_storage['path']
           end
         end
       end

@@ -12,6 +12,9 @@ gem 'foreman'
 # To provide rake tasks for resque workers
 gem 'rake'
 
+# To store the historical data
+gem 'redis'
+
 group :test do
   # For the test suite
   gem 'rspec'

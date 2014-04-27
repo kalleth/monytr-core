@@ -1,1 +1,5 @@
-checks_store: config/checks.yml
+# This is where the checks to run are loaded from.
+data_storage:
+  method: :yaml
+  path: config/checks.yml
+stored_records: 10

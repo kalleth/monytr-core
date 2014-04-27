@@ -83,6 +83,7 @@ DEPENDENCIES
   foreman
   pry
   rake
+  redis
   resque
   rspec
   timecop

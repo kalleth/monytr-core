@@ -31,9 +31,9 @@ module Monytr
           http = Net::HTTP.new(uri.host, uri.port)
           http.use_ssl = (uri.scheme == 'https')
           http.request(request)
-        rescue # XXX Needs to be made more specific so we dont prevent shutdown
+        rescue StandardError => e
           @breached = true
-          @details = "An error was encountered while fetching #{@path}.\n\nThe error was: #{$!.message}"
+          @details = "An error was encountered while fetching #{@path}.\n\nThe error was: #{e.message}"
         end
 
         def handle_response(response)
