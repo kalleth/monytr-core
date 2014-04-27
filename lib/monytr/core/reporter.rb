@@ -1,6 +1,5 @@
 require 'monytr/core/persisters'
 require 'monytr/core/state_change_inspectors'
-require 'pry'
 
 module Monytr
   module Core
@@ -8,18 +7,16 @@ module Monytr
       @queue = :reporting
 
       def self.perform(check_type, details, output)
-        puts "Reporting for a '#{check_type}' check."
-        puts " Details: #{details.inspect}"
-        puts " Response: #{output.inspect}"
-
         # Obtain array of 'recent state changes' for this check
         history = persister.historical_checks_for(details['identifier'])
-        puts " History: #{history.inspect} "
 
         # Determine if a 'state change' has occurred
-        state_change =  Monytr::Core::StateChangeInspectors.for(check_type).detect_changes(history, output)
+        state_change =  Monytr::Core::StateChangeInspectors.for(check_type).new(history, output).detect_changes
 
         if state_change
+          puts "State change detected for #{check_type}"
+          puts " Details: #{details.inspect}"
+          puts " Output: #{output.inspect}"
           # Create responders
           # For the enabled responders, create them.
           # IE:

@@ -3,3 +3,10 @@ data_storage:
   method: :yaml
   path: config/checks.yml
 stored_records: 10
+# A 'check' is said to be flapping if it's changed more than the
+# <flapping_threshold> in the last <stored_records> runs.
+#
+# We don't report when a check is flapping (the first 'state change' to
+# down will already have been reported), as that could get annoying
+# (and not very useful).
+flapping_threshold: 3
