@@ -29,6 +29,7 @@ module Monytr
           uri = URI.parse(@path) 
           request = Net::HTTP::Get.new(uri.request_uri)
           http = Net::HTTP.new(uri.host, uri.port)
+          http.use_ssl = (uri.scheme == 'https')
           http.request(request)
         rescue # XXX Needs to be made more specific so we dont prevent shutdown
           @breached = true
