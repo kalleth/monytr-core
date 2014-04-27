@@ -15,6 +15,9 @@ gem 'rake'
 # To store the historical data
 gem 'redis'
 
+# Responders
+gem 'hipchat'
+
 group :test do
   # For the test suite
   gem 'rspec'

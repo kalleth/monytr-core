@@ -5,12 +5,12 @@
     # state *changes* -- we must store a limited amount of historical data to
     # do this (and also do clever stuff like detect 'flapping' etc. 
     identifier: 'google-status-check'
-    path: 'https://www.google.co.uk/'
+    path: 'https://www.google.co.uk/you-suck-balls'
     responders:
-      - :hipchat
+      - hipchat
 - type: 'status'
   details:
     identifier: 'tomrussell-status-check'
     path: 'http://www.tomrussell.co.uk/'
     responders:
-      - :hipchat
+      - hipchat
