@@ -30,10 +30,14 @@ module Monytr
             message += "&nbsp;&nbsp;#{@state_change.output['details']}"
             color = "red"
           end
-          self.class.client[responder_config[:room]].send(user, message, color: color, notify: true)
+          self.class.client[room].send(user, message, color: color, notify: true)
         end
 
         private
+
+        def room
+          @details['responders']['hipchat']['room'] rescue responder_config[:room]
+        end
 
         def responder_config
           self.class.responder_config

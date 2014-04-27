@@ -15,6 +15,9 @@ Some of this code is messy, and somewhat poor, and I'll refactor it to be high-q
 3. Set up your checks: `$ vim config/checks.yml`
 4. Run the app: `$ foreman start`
 
+If you want e-mails to open in your browser while developing, then set
+environment variable `RUBY_ENV` to "development" (uses letter_opener gem)
+
 ## HOW DO I SHOT TEST?!
 Follow above, then instead of starting the app:
 `$ rspec`

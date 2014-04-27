@@ -15,3 +15,5 @@ responders:
   :hipchat: 
     :api_key: <YOUR_API_KEY>
     :room: Infrastructure
+  :email:
+    :from: monytr@stollen.cishub.co.uk
