@@ -9,6 +9,8 @@ module Monytr
 
         def detect_changes 
           return nil if flapping?
+          return nil if last_state == current_state
+          Monytr::Core::StateChangeInspectors::Result.new(last_state, current_state, @output)
         end
 
         # A 'check' is said to be flapping if it's changed more than a certain
@@ -20,7 +22,17 @@ module Monytr
         def flapping?
           recent_changes = ([@output] + @historical_data).map { |h| h['breached'] }
           squeezed = recent_changes.inject([]){|acc,i| acc.last == i ? acc : acc << i }
-          squeezed.size > Monytr::Core.config.flapping_threshold.to_i
+          squeezed.size > Monytr::Core.config.flapping_threshold
+        end
+
+        private
+
+        def last_state
+          @historical_data.first.nil? ? nil : @historical_data.first['breached']
+        end
+
+        def current_state
+          @output['breached']
         end
       end
     end
