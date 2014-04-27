@@ -13,7 +13,7 @@ Some of this code is messy, and somewhat poor, and I'll refactor it to be high-q
 
 ## HOW DO I RUN TEH APP
 1. Install gems: `$ bundle install`
-2. Copy config file, and then edit it: `$ cp config/config.yml.example config/config.yml; vim config.config.yml`
+2. Copy config file, and then edit it: `$ cp config/config.yml.example config/config.yml; vim config/config.yml`
 3. Set up your checks: `$ vim config/checks.yml`
 4. Run the app: `$ foreman start`
 
