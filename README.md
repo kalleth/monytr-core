@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kalleth/monytr-core.svg?branch=master)](https://travis-ci.org/kalleth/monytr-core)
+
 # Monytr-core
 Monytr-core is the backend/processing component of [Monytr](https://github.com/kalleth/monytr).
 

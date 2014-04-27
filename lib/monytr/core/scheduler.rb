@@ -1,6 +1,4 @@
 require 'resque'
-require 'monytr/core/persisters'
-require 'monytr/core/processor'
 
 module Monytr
   module Core

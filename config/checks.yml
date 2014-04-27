@@ -1,0 +1,6 @@
+- type: 'status'
+  details:
+    path: 'https://www.google.co.uk/'
+- type: 'status'
+  details:
+    path: 'http://www.tomrussell.co.uk'

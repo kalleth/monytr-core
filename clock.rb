@@ -1,7 +1,10 @@
-$:.unshift File.dirname(__FILE__)
+$:.unshift File.join(File.dirname(__FILE__), 'lib')
 
 require 'clockwork'
-require 'lib/monytr/core/scheduler'
+require 'monytr'
+# Scheduler is only required in 'clockwork' context, so is included here
+# explicitly
+require 'monytr/core/scheduler'
 
 module Clockwork
   handler do |job, time|
