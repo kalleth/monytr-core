@@ -1,5 +1,6 @@
 require 'monytr/core/data_stores'
 require 'monytr/core/processor'
+require 'monytr/core/reporter'
 
 module Monytr
   module Core

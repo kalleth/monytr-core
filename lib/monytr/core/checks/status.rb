@@ -14,6 +14,14 @@ module Monytr
           self
         end
 
+        def attributes
+          {
+            performed_at: performed_at,
+            breached: breached,
+            details: details
+          }
+        end
+
         private
         
         def make_request
@@ -25,16 +33,18 @@ module Monytr
         rescue # XXX Needs to be made more specific so we dont prevent shutdown
           @breached = true
           @details = "An error was encountered while fetching #{@path}.\n\nThe error was: #{$!.message}"
-          RequestError.new("Internal Error")
         end
 
         def handle_response(response)
-          if response.code == "200" 
-            @breached = false
-            @details = "200 OK"
-          else
-            @breached = true
-            @details = "A #{response.code} error code was encountered while fetching #{@path}."
+          if response.respond_to? :code
+            # If it isn't an httpresponse, then it's an exception handled upstream.
+            if response.code == "200" 
+              @breached = false
+              @details = "200 OK"
+            else
+              @breached = true
+              @details = "A #{response.code} error code was encountered while fetching #{@path}."
+            end
           end
         end
       end

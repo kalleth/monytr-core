@@ -9,7 +9,8 @@ describe Monytr::Core::Processor do
   subject { Monytr::Core::Processor }
 
   before do
-    check.stub(:execute)
+    check.stub(:attributes)
+    check.stub(:execute).and_return(check)
     Monytr::Core::Checks.stub(:for).with(type).and_return(check_class)
   end
 

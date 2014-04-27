@@ -1,5 +1,5 @@
 require 'monytr/core/checks'
-require 'pry'
+require 'resque'
 
 module Monytr
   module Core
@@ -10,6 +10,7 @@ module Monytr
         klass = Monytr::Core::Checks.for(check_type)
         raise "Couldn't find checker for '#{check_type}'" unless klass 
         checker = klass.new(details).execute 
+        Resque.enqueue(Monytr::Core::Reporter, check_type, details, checker.attributes)
       end
     end
   end
