@@ -23,6 +23,7 @@ GEM
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
+    rake (10.2.2)
     redis (3.0.7)
     redis-namespace (1.4.1)
       redis (~> 3.0.4)
@@ -58,5 +59,6 @@ PLATFORMS
 DEPENDENCIES
   clockwork
   foreman
+  rake
   resque
   rspec
