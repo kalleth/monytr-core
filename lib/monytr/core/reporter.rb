@@ -1,5 +1,6 @@
 require 'monytr/core/persisters'
 require 'monytr/core/state_change_inspectors'
+require 'monytr/core/responders'
 
 module Monytr
   module Core
@@ -14,15 +15,9 @@ module Monytr
         state_change =  Monytr::Core::StateChangeInspectors.for(check_type).new(history, output).detect_changes
 
         if state_change
-          puts "State change detected for #{check_type}"
-          puts " Details: #{details.inspect}"
-          puts " Output: #{output.inspect}"
-          # Create responders
-          # For the enabled responders, create them.
-          # IE:
-          #   Monytr::Core::Responders::HipChat
-          #   Monytr::Core::Responders::Email
-          #   Monytr::Core::Responders::Script
+          Monytr::Core::Responders.for(details).each do |responder|
+            responder.new(check_type, details, state_change).respond
+          end
         end
 
         persister.store_new_entry(details['identifier'], output)

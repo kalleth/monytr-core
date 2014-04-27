@@ -10,3 +10,8 @@ stored_records: 10
 # down will already have been reported), as that could get annoying
 # (and not very useful).
 flapping_threshold: 3
+
+responders:
+  :hipchat: 
+    :api_key: <YOUR_API_KEY>
+    :room: Infrastructure

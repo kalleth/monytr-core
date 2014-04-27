@@ -6,7 +6,11 @@
     # do this (and also do clever stuff like detect 'flapping' etc. 
     identifier: 'google-status-check'
     path: 'https://www.google.co.uk/'
+    responders:
+      - :hipchat
 - type: 'status'
   details:
     identifier: 'tomrussell-status-check'
-    path: 'http://www.tomrussell.co.uk'
+    path: 'http://www.tomrussell.co.uk/'
+    responders:
+      - :hipchat
