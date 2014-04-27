@@ -1,10 +1,17 @@
-require 'monytr/core/persisters'
+require 'monytr/core/data_stores'
 require 'monytr/core/processor'
 
 module Monytr
   module Core
-    def self.config
-      @config ||= OpenStruct.new(YAML.load_file('config/config.yml'))
+    class << self
+      def config
+        @config ||= OpenStruct.new(YAML.load_file(config_path))
+      end
+
+      private
+      def config_path
+        File.join('config/config.yml')
+      end
     end
   end
 end

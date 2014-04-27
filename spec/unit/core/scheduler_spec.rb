@@ -7,7 +7,7 @@ describe Monytr::Core::Scheduler do
   before do
     check.stub(:type).and_return('status')
     check.stub(:details).and_return('details')
-    Monytr::Core::Persisters::Yaml.stub(:checks).and_return([check, check])
+    Monytr::Core::DataStores::Yaml.stub(:checks).and_return([check, check])
   end
 
   it "queues checks" do

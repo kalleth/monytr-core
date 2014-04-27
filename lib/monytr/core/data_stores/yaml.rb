@@ -2,8 +2,8 @@ require 'yaml'
 
 module Monytr
   module Core
-    module Persisters
-      class Yaml
+    module DataStores
+      module Yaml
         Check = Struct.new(:type, :details) # Move out to a model when required
 
         class << self
