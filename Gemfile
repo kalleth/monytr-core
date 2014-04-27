@@ -15,4 +15,11 @@ gem 'rake'
 group :test do
   # For the test suite
   gem 'rspec'
+  gem 'timecop'
+  gem 'webmock'
+end
+
+group :development do
+  gem 'pry'
+  gem 'binding_of_caller'
 end
