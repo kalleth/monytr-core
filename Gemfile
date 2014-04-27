@@ -15,6 +15,7 @@ gem 'rake'
 group :test do
   # For the test suite
   gem 'rspec'
+  gem 'fakeredis'
   gem 'timecop'
   gem 'webmock'
 end
