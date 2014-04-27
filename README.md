@@ -1,7 +1,7 @@
 # Monytr-core
 Monytr-core is the backend/processing component of [Monytr](https://github.com/kalleth/monytr).
 
-## WTF IS: Monytr?
+## WTF IS: Monytr?
 Monytr is a single-purpose application designed to do one thing well. Tell you when your websites go down.
 
 ## A note for people
@@ -10,7 +10,7 @@ Some of this code is messy, and somewhat poor, and I'll refactor it to be high-q
 ## HOW DO I RUN TEH APP
 `$ foreman start`
 
-## HOW DO I SHOT TEST?!
+## HOW DO I SHOT TEST?!
 `$ rspec`
 
 ## Pull request?
