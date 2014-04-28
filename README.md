@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/kalleth/monytr-core.svg?branch=master)](https://travis-ci.org/kalleth/monytr-core)
 
 # Monytr-core
-Monytr-core is the backend/processing component of [Monytr](https://github.com/kalleth/monytr).
+Monytr-core is the backend/processing component of Monytr.
 
-It can be used without a web frontend (to be developed) to notify you via Hipchat and E-mail when your sites go down -- i.e., provide a path for it to check (see config/checks.yml) and if that path returns anything other than a '200' response, you'll get an e-mail.
+It notifies you via Hipchat and E-mail when your sites go down -- i.e., provide a path for it to check (see config/checks.yml) and if that path returns anything other than a '200' response, you'll get an e-mail.
 
 ## WTF IS: Monytr?
 Monytr is a single-purpose application designed to do one thing well. Tell you when your websites go down.
