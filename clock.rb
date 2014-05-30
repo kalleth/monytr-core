@@ -11,6 +11,6 @@ module Clockwork
     puts "Running #{job} at #{time}"
   end
 
-  #every(5.minutes, 'checks.enqueue') { Monytr::Core::Scheduler.enqueue_checks }
-  every(20.seconds, 'checks.enqueue') { Monytr::Core::Scheduler.enqueue_checks }
+  every(5.minutes, 'checks.enqueue') { Monytr::Core::Scheduler.enqueue_checks }
+  #every(20.seconds, 'checks.enqueue') { Monytr::Core::Scheduler.enqueue_checks }
 end
