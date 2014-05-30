@@ -8,11 +8,15 @@ Monytr-core is designed to be used on an external low end VPS, outside of your u
 
 It notifies you via Hipchat and E-mail -- i.e., provide a path for it to check (see config/checks.yml) and if that path returns anything other than a '200' response, you'll get an e-mail.
 
+## Monytr-core is not a persistent data store
+That means it won't store average ping responses, error rates, and the like. If you need that, go pay for one of the more featureful tools -- pingdom, newrelic et al. -- they are much better tools for this.
+
 ## Running monytr-core
-1. Install gems: `$ bundle install`
-2. Copy config file, and then edit it: `$ cp config/config.yml.example config/config.yml; vim config/config.yml`
-3. Set up your checks: `$ vim config/checks.yml`
-4. Run the app: `$ foreman start`
+1. Install dependency 'redis'. Monytr expects redis to be running locally on a default port. This is used to store the last few checks so Monytr can detect state changes and flapping sites.
+2. Install gems: `$ bundle install`
+3. Copy config file, and then edit it: `$ cp config/config.yml.example config/config.yml; vim config/config.yml`
+4. Set up your checks: `$ vim config/checks.yml`
+5. Run the app: `$ foreman start`
 
 If you want e-mails to open in your browser while developing, then set
 environment variable `RUBY_ENV` to "development" (uses letter_opener gem)
