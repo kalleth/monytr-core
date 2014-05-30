@@ -12,7 +12,7 @@ It notifies you via Hipchat and E-mail -- i.e., provide a path for it to check (
 That means it won't store average ping responses, error rates, and the like. If you need that, go pay for one of the more featureful tools -- pingdom, newrelic et al. -- they are much better tools for this.
 
 ## Running monytr-core
-1. Install dependency 'redis'. Monytr expects redis to be running locally on a default port. This is used to store the last few checks so Monytr can detect state changes and flapping sites.
+1. Install dependency 'redis'. Monytr expects redis to be running locally on a default port. This is used to store the last few checks so Monytr can detect state changes and flapping sites. `apt-get install redis-server` or `brew install redis`.
 2. Install gems: `$ bundle install`
 3. Copy config file, and then edit it: `$ cp config/config.yml.example config/config.yml; vim config/config.yml`
 4. Set up your checks: `$ vim config/checks.yml`
