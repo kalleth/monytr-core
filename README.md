@@ -2,15 +2,11 @@
 [![Code Climate](https://codeclimate.com/github/kalleth/monytr-core.png)](https://codeclimate.com/github/kalleth/monytr-core)
 
 # Monytr-core
-Monytr-core is the backend/processing component of Monytr.
+Monytr-core is a background process that performs simple up/down monitoring for your websites. It's intended to be extended with a web UI in future, but works perfectly well as-is.
 
-It notifies you via Hipchat and E-mail when your sites go down -- i.e., provide a path for it to check (see config/checks.yml) and if that path returns anything other than a '200' response, you'll get an e-mail.
+Monytr-core is designed to be used on an external low end VPS, outside of your usual hosting environment.
 
-## WTF IS: Monytr?
-Monytr is a single-purpose application designed to do one thing well. Tell you when your websites go down.
-
-## A note for people
-Some of this code is messy, and somewhat poor, and I'll refactor it to be high-quality once the app is released and working. This is code for me, not clients, at the moment. If you are an agent or anyone looking to hire me, remember [github is not my CV](https://blog.jcoglan.com/2013/11/15/why-github-is-not-your-cv/) and you shouldn't use this repository to influence your decision. Yet.
+It notifies you via Hipchat and E-mail -- i.e., provide a path for it to check (see config/checks.yml) and if that path returns anything other than a '200' response, you'll get an e-mail.
 
 ## Running monytr-core
 1. Install gems: `$ bundle install`
