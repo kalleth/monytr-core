@@ -15,6 +15,9 @@ responders:
   :hipchat: 
     :api_key: <YOUR_API_KEY>
     :room: Infrastructure
+  :slack:
+    :team: <your team short name (from the URL)>
+    :token: <the token from the URL>
   :email:
     :from: monytr@stollen.cishub.co.uk
     :prefix: "[MONYTR]"

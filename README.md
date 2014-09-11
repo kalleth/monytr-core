@@ -6,7 +6,14 @@ Monytr-core is a background process that performs simple up/down monitoring for 
 
 Monytr-core is designed to be used on an external low end VPS, outside of your usual hosting environment.
 
-It notifies you via Hipchat and E-mail -- i.e., provide a path for it to check (see config/checks.yml) and if that path returns anything other than a '200' response, you'll get an e-mail.
+It notifies you via configurable responders -- i.e., provide a path for it to check (see config/checks.yml) and if that path returns anything other than a '200' response, you'll get an e-mail (if you've configured an e-mail responder).
+
+## Integrations
+ * Hipchat
+ * Email
+ * Slack (beta)
+
+To set up integrations, see config/checks.yml and config/config.yml.example.
 
 ## Monytr-core is not a persistent data store
 That means it won't store average ping responses, error rates, and the like. If you need that, go pay for one of the more featureful tools -- pingdom, newrelic et al. -- they are much better tools for this.

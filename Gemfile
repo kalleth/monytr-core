@@ -18,6 +18,7 @@ gem 'redis'
 # Responders
 gem 'hipchat'
 gem 'mail'
+gem 'slack-notifier'
 
 group :test do
   # For the test suite

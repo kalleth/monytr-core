@@ -9,6 +9,8 @@
     responders:
       hipchat:
         room: General
+      slack:
+        room: "#infrastructure"
       email:
         targets:
           - tom@cishub.co.uk
@@ -20,3 +22,5 @@
     responders:
       hipchat:
         room: Infrastructure
+      slack:
+        room: "#infrastructure"
